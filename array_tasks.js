@@ -57,19 +57,41 @@ var arrayTasks = {
 			}
 		}
 		return cloneArray;
-}
+	},
 
+	findIndexesOf: function(array,valueToFind) {
+		var indexArray = [];
+		loop = array.length 
+ 
+		for (var i=0; i<loop; i++) {
+			if (array[i] === valueToFind) {
+				indexArray.push(i);
+			}
+		}
+		return indexArray;
+	},
 
+	sumOfAllEvenNumbersSquared: function(array) {
+		var tempArray = [];
+		loop = array.length;
+		total = 0;
+		var newArray = [];
 
+		for(var i=0; i<loop; i++) {
+			if (array[i] % 2  === 0) {
+				console.log("array", array[i])
+				tempArray.push(array[i]);
+			}
+		}
+		console.log("arrcony",tempArray);
+		newArray = this.square(tempArray);
+		console.log('square',newArray);
 
-	// findIndexesOf: function (arr, itemToFind) {
-		
-	// },
-
-	// sumOfAllEvenNumbersSquared: function (arr) {
-		
-	// }
-
+		for (var j=0; j<newArray.length; j++) {
+			total += newArray[j];
+		}
+		return total;
+	}
 }
 
 module.exports = arrayTasks
